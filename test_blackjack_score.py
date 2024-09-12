@@ -10,38 +10,62 @@ def test_score_for_pair_of_number_cards():
   score = blackjack_score(hand)
 
   # Assert <-- Write assert statement here
-  
+  assert score == 7
 
-@pytest.mark.skip(reason="no way of currently testing this")
+
+#@pytest.mark.skip(reason="no way of currently testing this")
 def test_facecards_have_values_calculated_correctly():
-  pass
+  hand = ["Jack", "King"]
+  score = blackjack_score(hand)
+  assert score == 20
 
-@pytest.mark.skip(reason="no way of currently testing this")
+
+#@pytest.mark.skip(reason="no way of currently testing this")
 def test_calculates_aces_as_11_where_it_does_not_go_over_21():
-  pass
+  hand = ["King", "Ace"]
+  score = blackjack_score(hand)
+  assert score == 21 
 
 
-@pytest.mark.skip(reason="no way of currently testing this")
+
+#@pytest.mark.skip(reason="no way of currently testing this")
 def test_calculates_aces_as_1_where_11_would_bust():
-  pass
+  hand = ["Jack", "Queen", "Ace"]
+  score = blackjack_score(hand)
+  assert score == 21  
 
-@pytest.mark.skip(reason="no way of currently testing this")
+
+#@pytest.mark.skip(reason="no way of currently testing this")
 def test_returns_invalid_for_invalid_cards():
-  pass
+  hand = [1]
+  score = blackjack_score(hand)
+  assert score == "Invalid"
 
 
-@pytest.mark.skip(reason="no way of currently testing this")
+
+#@pytest.mark.skip(reason="no way of currently testing this")
 def test_returns_invalid_for_list_length_greater_than_5():
-  pass
+  hand = [2, 3, 4, 5, 6, 7]
+  score = blackjack_score(hand)
+  assert score == "Invalid"
 
-@pytest.mark.skip(reason="no way of currently testing this")
+
+#@pytest.mark.skip(reason="no way of currently testing this")
 def test_returns_bust_for_scores_over_21():
-  pass
+  hand = ["Jack", "Queen", 9]
+  score = blackjack_score(hand)
+  assert score == "Bust"
 
-@pytest.mark.skip(reason="no way of currently testing this")
+
+# @pytest.mark.skip(reason="no way of currently testing this")
 def test_returns_12_for_ace_ace_king():
-  pass
+  hand = ["Ace", "Ace", "King"]
+  score = blackjack_score(hand)
+  assert score == 12  
 
-@pytest.mark.skip(reason="logic not yet implemented")
+
+# @pytest.mark.skip(reason="logic not yet implemented")
 def test_returns_14_for_ace_ace_ace_ace():
-    pass
+  hand = ["Ace", "Ace", "Ace", "Ace"]
+  score = blackjack_score(hand)
+  assert score == 14  
